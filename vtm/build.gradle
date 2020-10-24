@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+dependencies {
+    api "org.slf4j:slf4j-api:$slf4jVersion"
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+}
+
+sourceSets {
+    main.java.srcDirs = ['src']
+    main.resources.srcDirs = ['resources']
+}
+
+if (project.hasProperty("SONATYPE_USERNAME")) {
+    afterEvaluate {
+        project.apply from: "${rootProject.projectDir}/deploy.gradle"
+    }
+}

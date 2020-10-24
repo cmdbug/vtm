@@ -1,0 +1,42 @@
+apply plugin: 'application'
+
+dependencies {
+    implementation project(':vtm-desktop-lwjgl')
+    file("${rootDir}/vtm-desktop/natives").eachDir() { dir ->
+        implementation files(dir.path)
+    }
+    implementation project(':vtm-extras')
+    implementation project(':vtm-gdx-poi3d')
+    implementation project(':vtm-http')
+    implementation project(':vtm-jeo')
+    implementation project(':vtm-json')
+    implementation project(':vtm-jts')
+    implementation project(':vtm-models')
+    implementation project(':vtm-mvt')
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    implementation "org.slf4j:slf4j-jdk14:$slf4jVersion"
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src']
+        resources.srcDirs = ['resources']
+    }
+}
+
+mainClassName = "org.oscim.test.MapsforgeTest"
+run {
+    if (project.hasProperty("args")) {
+        args project.getProperty("args").split(",")
+    }
+}
+
+task fatJar(type: Jar, dependsOn: classes) {
+    classifier = 'jar-with-dependencies'
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    manifest {
+        attributes 'Main-Class': "${mainClassName}"
+    }
+    with jar
+}

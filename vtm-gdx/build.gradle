@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+dependencies {
+    api project(':vtm')
+    api project(':vtm-themes')
+    api "com.badlogicgames.gdx:gdx:$gdxVersion"
+}
+
+sourceSets {
+    main.java.srcDirs = ['src']
+//    main.resources.srcDirs = ['src']
+}
+
+if (project.hasProperty("SONATYPE_USERNAME")) {
+    afterEvaluate {
+        project.apply from: "${rootProject.projectDir}/deploy.gradle"
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/themes"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/theme_default"
+            android:checked="true"
+            android:title="@string/theme_default" />
+        <item
+            android:id="@+id/theme_osmarender"
+            android:title="@string/theme_osmarender" />
+        <item
+            android:id="@+id/theme_osmagray"
+            android:title="@string/theme_osmagray" />
+        <item
+            android:id="@+id/theme_tubes"
+            android:title="@string/theme_tubes" />
+        <item
+            android:id="@+id/theme_newtron"
+            android:title="@string/theme_newtron" />
+        <item
+            android:id="@+id/theme_external"
+            android:title="@string/theme_external" />
+    </group>
+
+    <item
+        android:id="@+id/gridlayer"
+        android:checkable="true"
+        android:title="@string/menu_gridlayer" />
+
+</menu>

@@ -1,0 +1,9 @@
+apply plugin: 'java-library'
+
+dependencies {
+    api "com.badlogicgames.gdx:gdx-jnigen:$gdxVersion"
+}
+
+sourceSets {
+    main.java.srcDirs = ['src']
+}

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rendertheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" map-background="#fffcfa"
+    version="1" xmlns="http://opensciencemap.org/rendertheme"
+    xsi:schemaLocation="http://opensciencemap.org/rendertheme https://raw.githubusercontent.com/mapsforge/vtm/master/resources/rendertheme.xsd">
+
+    <tag-transform k="render_height" k-lib="height" />
+    <tag-transform k="render_min_height" k-lib="min_height" />
+    <!--<tag-transform k="layer" v="building" k-lib="building" v-lib="yes" />-->
+    <!--<tag-transform k="layer" v="building:part" k-lib="building:part" v-lib="yes" />-->
+
+    <!--###### TEXT styles ######-->
+
+    <!--default label-->
+    <style-text caption="true" dy="20" fill="#2d51bc" font-family="medium" id="caption-small-blue"
+        k="name" size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--shop-->
+    <style-text caption="true" dy="20" fill="#ac39ac" font-family="medium" id="shop" k="name"
+        size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--tavern-->
+    <style-text caption="true" dy="20" fill="#734a08" font-family="medium" id="tavern" k="name"
+        size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--accommodation-->
+    <style-text caption="true" dy="20" fill="#0092da" font-family="medium" id="accommodation"
+        k="name" size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--education-->
+    <style-text caption="true" dy="20" fill="#0a4f0a" font-family="medium" id="education" k="name"
+        size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--health-->
+    <style-text caption="true" dy="20" fill="#da0092" font-family="medium" id="health" k="name"
+        size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--entertainment-->
+    <style-text caption="true" dy="20" fill="#b7650c" font-family="medium" id="entertainment"
+        k="name" size="14" stroke="#ffffff" stroke-width="2.0" />
+    <!--roads-->
+    <style-text fill="#101010" id="road" k="name" priority="2" size="16" stroke="#eeeeee"
+        stroke-width="2.0" />
+    <!--major roads-->
+    <style-text style="bold" fill="#101010" id="major-road" k="name" priority="1" size="16"
+        stroke="#eeeeee" stroke-width="2.0" />
+    <!--references-->
+    <style-text style="bold" fill="#606060" id="ref" k="ref" priority="2" size="12" stroke="#ffffff"
+        stroke-width="2.0" />
+    <style-text caption="true" style="bold" fill="#ffffff" id="ref-caption" k="ref" priority="2"
+        size="12" bg-fill="#45a976" />
+    <!--ferry-->
+    <style-text style="bold" fill="#606060" id="ferry" k="name" size="12" stroke="#ffffff"
+        stroke-width="2.0" />
+
+
+    <!--###### AREA styles ######-->
+
+    <!--residential-->
+    <style-area fade="11" fill="#e8e7e3" id="residential" />
+    <!--railway-->
+    <style-area fade="10" fill="#e6e3e5" id="railway|industrial" />
+
+    <!-- fade out at z=7, blend over to 'blend-fill' in z=11 -->
+    <!-- src="assets:textures/wood.png" -->
+    <!-- <style-area id="wood" fill="#d1dbc7" fade="8" blend="11" blend-fill="#9ac56e" /> -->
+
+    <!--Note: ordered according to their inheritance via the `use` attribute-->
+
+    <!-- Avoid patterns and textures because of old GPU issues -->
+    <!--<style-area id="tex1" src="assets:textures/rough.png" />-->
+
+    <!-- meadow|garden -->
+    <style-area fade="10" fill="#c9dc91" id="greens" />
+
+    <!-- grass -->
+    <style-area fade="12" fill="#d3dcb9" id="lightgreen" />
+
+    <!-- grassland|scrub -->
+    <style-area fade="10" fill="#c2cba5" id="darkgreen" />
+
+    <!--farmland-->
+    <style-area fade="12" fill="#e4dab5" id="farmland" />
+
+    <!-- <style-area id="greens" fill="#d2e5ce" fade="10" /> -->
+
+    <!-- marsh|wetland|mud|nature_reserve -->
+    <style-area fade="12" fill="#deecb9" id="greens2" />
+
+    <!-- park|common|green|cemetery|golf_course|dog_park -->
+    <style-area fade="11" fill="#9ac56e" id="park" />
+    <!-- <style-area id="wood" use="park" fill="#9ac56e" fade="8" /> -->
+
+    <!--wood-->
+    <style-area blend="11" blend-fill="#83aa5b" fade="8" fill="#b3d095" id="wood" use="park" />
+    <!-- <style-line id="wood" fix="true" cap="butt" width="1.0" stroke="#9ac56e" /> -->
+
+    <!-- de:Kleingartengebiet -->
+    <style-area fade="12" fill="#efeae0" id="allotments" />
+
+    <!-- de:Steinbruch, Schotter-, Kies-, Sand- und Tongrube -->
+    <style-area fade="10" fill="#ddddcc" id="quarry" />
+
+    <!--military-->
+    <style-area fade="10" fill="#eeedea" id="military" />
+    <!--building-->
+    <style-area fade="15" fill="#f2f0eb" id="building" />
+    <!--<style-area id="building" fill="#e9e6e3" fade="15"/>-->
+
+    <!--water-->
+    <!--<style-area id="water" fill="#97b7e5" afc5e3 /> -->
+    <!-- src="assets:textures/water.png" -->
+    <style-area fade="-1" fill="#99badf" id="water" />
+
+
+    <!--###### LINE styles ######-->
+
+    <!-- <style-area id="park" fill="#a3ca7b" fade="11" /> -->
+    <style-line cap="butt" fade="14" fix="true" id="park" stroke="#9ac56e" width="1.0" />
+
+    <!-- base style for fixed width lines -->
+    <style-line cap="butt" fix="true" id="fix" width="1.0" />
+
+    <!--residential-->
+    <style-line id="residential" stroke="#ffffff" width="1.3" />
+    <style-line cap="butt" id="residential:bridge" use="residential" />
+
+    <!-- when inheriting another style with 'from' then 'width' is relative to the parent -->
+    <style-line id="pedestrian" use="residential" width="-0.4" />
+    <style-line cap="butt" id="pedestrian:bridge" use="pedestrian" />
+
+    <style-line id="highway:z11" stroke="#fcba5a" width="1.8" />
+    <!-- <style-line id="highway:z11:bridge" use="highway:z11" cap="butt" /> -->
+    <style-line cap="butt" id="trunk_link" stroke="#fee16e" width="1.3" />
+    <style-line id="trunk" stroke="#fedb52" width="1.6" />
+    <style-line id="primary:z11" stroke="#f4d26e" width="1.5" />
+    <style-line id="secondary:z11" use="primary:z11" width="-0.1" />
+    <style-line id="tertiary" stroke="#fefefa" use="residential" width="0.2" />
+    <style-line id="construction" stroke="#e0e0e0" width="1.2" />
+    <style-line id="highway-service" use="residential" width="-0.6" />
+
+    <!-- track|footway|path|cycleway -->
+    <style-line cap="butt" fix="true" id="footway" stipple="2" stipple-stroke="#d35c48"
+        stipple-width="0.6" stroke="#aaffffff" width="1.8" />
+    <style-line id="highway:cycleway" stipple-stroke="#4040ee" use="footway" width="0.1" />
+    <style-line id="highway:track" stipple="3" stipple-stroke="#a39b68" use="footway" width="0.1" />
+    <style-line id="highway:path" stipple="2" stipple-stroke="#837b58" use="footway" width="0.1" />
+
+    <!-- <style-line id="footway:z16" use="footway" width="-0.95" fixed="false" fade="-1"/> -->
+    <style-line id="footway:z17" stroke="#faf8f5" width="0.3" />
+
+    <!-- de: ein Weg der für Reiter vorgesehen ist.. -->
+    <style-line cap="butt" id="bridleway" stipple-stroke="#837b58" stroke="#d3cb98" use="footway"
+        width="0.1" />
+    <style-line cap="butt" fix="true" id="steps" stipple="2" stipple-stroke="#be6253"
+        stipple-width="1.0" stroke="#aaffffff" width="4.2" />
+    <style-line cap="butt" fix="true" id="water:outline" stroke="#a4bbcc" width="1.0" />
+
+    <!--water-->
+    <style-line cap="butt" fix="true" id="water" stroke="#a4bbcc" width="1.0" />
+    <style-line fix="false" id="river" stroke="#a4bbcc" use="water" />
+
+    <!-- no-go area boundary -->
+    <style-line cap="butt" fix="true" id="fence" stroke="#444444" width="1.2" />
+    <style-line cap="butt" id="aeroway:runway" stroke="#c8ccbe" width="1.8" />
+
+    <!--building-->
+    <!-- <style-line id="building" stroke="#c9c3c1" width="1.0" fix="true" cap="butt" fade="15"/> -->
+    <!-- <style-line id="building" stroke="#d0cec8" width="1.0" fix="true" cap="butt" fade="15"/> -->
+    <style-line fade="15" id="building" stroke="#eeb7b6b3" use="fix" />
+
+    <!--###### SYMBOL styles ######-->
+
+    <!-- oneway -->
+    <style-symbol id="oneway" repeat="true" src="assets:symbols/oneway.svg" />
+
+
+    <!--###### ASSIGNMENT ######-->
+
+    <!-- boundary -->
+    <m e="way" k="layer" v="boundary">
+        <m k="admin_level">
+            <m v="4">
+                <line fix="true" stipple="4" stipple-stroke="#888888" stipple-width="1.0"
+                    stroke="#dadada" width="2.0" />
+            </m>
+            <m v="2">
+                <line fix="true" stipple="6" stipple-stroke="#647b9c" stipple-width="1.0"
+                    stroke="#bbbbbb" width="2.5" />
+            </m>
+        </m>
+    </m>
+
+    <!-- TODO aeroway -->
+
+    <!-- Landcover -->
+    <m k="layer" v="landcover">
+        <!-- TODO handle subclass -->
+        <m k="class">
+            <m v="farmland">
+                <area use="farmland" />
+            </m>
+            <m v="ice">
+                <!-- TODO we don't have anything for ice yet... -->
+                <area use="farmland" />
+            </m>
+            <m v="wood">
+                <area use="wood" />
+            </m>
+            <m v="grass">
+                <area use="greens" />
+            </m>
+            <m v="wetland">
+                <area use="greens2" />
+            </m>
+        </m>
+    </m>
+
+    <!-- Landuse -->
+    <m k="layer" v="landuse">
+        <!-- TODO handle subclass -->
+        <m k="class">
+            <m v="school|university|kindergarten|college">
+                <area fade="14" fill="#e6e4c5" />
+                <line cap="butt" fade="14" fix="true" stroke="#9aabae" width="1.0" />
+            </m>
+            <m v="hospital">
+                <area fill="#f2d9b1" />
+            </m>
+            <m v="cemetery">
+                <area use="park" />
+                <m zoom-min="14">
+                    <line use="park" />
+                </m>
+            </m>
+            <m v="military">
+                <area use="military" />
+            </m>
+            <m v="residential|commercial|retail">
+                <area use="residential" />
+            </m>
+            <m v="railway|industrial">
+                <area use="railway|industrial" />
+            </m>
+            <m v="stadium">
+                <line cap="butt" fix="true" stroke="#c9c3c1" width="1.0" />
+                <area fill="#e9e6e3" />
+            </m>
+        </m>
+    </m>
+
+    <!-- TODO Mountain Peak -->
+
+    <m k="layer" v="park">
+        <m k="class">
+            <m v="national_park|nature_reserve">
+                <area fill="#40abe29c" />
+            </m>
+        </m>
+    </m>
+
+    <m k="layer" v="place">
+        <m k="class">
+            <m zoom-max="6">
+                <m v="continent">
+                    <caption style="bold" fill="#000000" k="name" priority="0" size="20"
+                        stroke="#ffffff" stroke-width="2.0" />
+                </m>
+                <m v="country">
+                    <caption style="bold" fill="#000000" k="name" priority="0" size="20"
+                        stroke="#ffffff" stroke-width="2.0" />
+                </m>
+            </m>
+            <m v="city">
+                <m zoom-min="7">
+                    <caption style="bold" dy="14" fill="#000000" k="name" priority="1" size="19"
+                        stroke="#ffffff" stroke-width="2.0" symbol="assets:symbols/dot_black.svg" />
+                </m>
+                <m zoom-max="6">
+                    <caption dy="14" fill="#000000" k="name" priority="1" size="19" stroke="#ffffff"
+                        stroke-width="2.0" symbol="assets:symbols/dot_black.svg" />
+                </m>
+            </m>
+            <m v="town">
+                <caption fill="#000000" k="name" priority="2" size="19" stroke="#ffffff"
+                    stroke-width="2.0" />
+            </m>
+            <m v="village|hamlet" zoom-max="14">
+                <caption fill="#444411" k="name" priority="3" size="17" stroke="#ffffff"
+                    stroke-width="2.0" />
+            </m>
+            <m v="suburb|neighbourhood|isolated_dwelling" zoom-max="14">
+                <caption style="bold_italic" fill="#404040" k="name" priority="4" size="17"
+                    stroke="#ffffff" stroke-width="2.0" />
+            </m>
+        </m>
+    </m>
+
+    <!-- TODO POI -->
+
+    <m k="layer" v="transportation">
+        <!-- TODO Care about tunnel and bridge later -->
+        <!-- TODO Care about steps and links later -->
+        <!--<m k="brunnel" v="~">-->
+        <m k="class">
+            <!-- TODO Care about raceway later -->
+            <m v="rail|transit">
+                <line cap="butt" fix="true" stroke="#777777" width="0.9" />
+            </m>
+            <m v="track">
+                <line use="highway:track" />
+            </m>
+            <m v="path">
+                <line use="highway:path" />
+            </m>
+            <m v="service">
+                <!-- matches every service but parking_isle -->
+                <m k="service" v="-|parking_aisle">
+                    <line outline="1" use="highway-service" />
+                </m>
+                <m k="service" v="parking_aisle" zoom-min="16">
+                    <line outline="1" use="highway-service" width="-0.4" />
+                </m>
+            </m>
+            <m v="minor">
+                <line outline="1" use="residential" />
+            </m>
+            <m v="tertiary">
+                <line outline="1" use="tertiary" />
+            </m>
+            <m v="secondary">
+                <line outline="primary" use="secondary:z11" />
+            </m>
+            <m v="primary">
+                <line outline="primary" use="primary:z11" />
+            </m>
+            <m v="trunk">
+                <line outline="motorway" use="trunk" />
+            </m>
+            <m v="motorway">
+                <line outline="motorway" use="highway:z11" />
+            </m>
+        </m>
+
+        <m k="oneway" v="1" zoom-min="16">
+            <m k="class" v="motorway|trunk|primary|secondary|tertiary|minor">
+                <symbol use="oneway" />
+            </m>
+        </m>
+    </m>
+
+    <m k="layer" v="transportation_name">
+        <m k="class">
+            <m v="minor|tertiary">
+                <text use="road" />
+            </m>
+            <m v="secondary|primary|trunk|motorway">
+                <text use="major-road" />
+                <m zoom-max="12">
+                    <text use="ref-caption" />
+                </m>
+                <m zoom-min="13">
+                    <text use="ref" />
+                </m>
+            </m>
+        </m>
+    </m>
+
+    <m k="layer" v="water">
+        <m k="class">
+            <m v="ocean|lake|river">
+                <area mesh="true" use="water" />
+            </m>
+        </m>
+    </m>
+
+    <m k="layer" v="water_name">
+        <caption area-size="0.4" fill="#404000" k="name" size="16" stroke="#aaffffff"
+            stroke-width="2.0" />
+    </m>
+
+    <m k="layer" v="waterway">
+        <m k="class">
+            <m v="ditch|drain" zoom-min="14">
+                <line fade="14" use="water" width="0.2" />
+            </m>
+            <m v="canal">
+                <line use="river" width="-0.3" />
+            </m>
+            <m v="stream" zoom-min="13">
+                <line fade="13" use="water" width="0.5" />
+            </m>
+            <m select="first" v="river">
+                <line use="river" width="0.3" />
+            </m>
+        </m>
+    </m>
+
+    <!-- building -->
+    <m k="layer" v="building|building:part">
+        <m v="building">
+            <m zoom-min="14">
+                <m closed="yes">
+                    <area fade="14" use="building" />
+                    <line fade="14" use="building" />
+                </m>
+                <m closed="no">
+                    <line fade="14" use="building" />
+                </m>
+            </m>
+        </m>
+        <m v="building:part">
+            <m zoom-min="16">
+                <m closed="yes">
+                    <area fade="16" use="building" />
+                    <line fade="16" use="building" />
+                </m>
+                <m closed="no">
+                    <line fade="16" use="building" />
+                </m>
+            </m>
+        </m>
+        <m zoom-min="17">
+            <extrusion line-color="#ffd9d8d6" side-color="#eaecebe9" top-color="#eaf9f8f6" />
+        </m>
+    </m>
+
+    <!-- housenumber -->
+    <!--<m k="layer" v="housenumber" zoom-min="18">
+        <caption style="bold" fill="#606060" font-family="condensed" k="housenumber" priority="10"
+            size="12" stroke="#ffffff" stroke-width="2.0" />
+    </m>-->
+
+    <m k="layer" v="poi">
+        <m k="subclass">
+
+            <!-- railway -->
+            <m select="first" zoom-min="15">
+                <m v="tram_stop">
+                    <symbol src="assets:symbols/transport/tram_stop.svg" />
+                </m>
+                <m v="railway">
+                    <symbol src="assets:symbols/transport/train_station2.svg" />
+                </m>
+
+                <m select="when-matched">
+                    <caption style="bold" dy="20" fill="#af3a3a" k="name" size="14" stroke="#ffffff"
+                        stroke-width="2.0" />
+                </m>
+            </m>
+
+            <!-- Shop -->
+            <m select="first" zoom-min="17">
+                <m v="bakery">
+                    <symbol src="assets:symbols/shopping/bakery.svg" />
+                </m>
+                <!--<m v="florist">
+                    <symbol src="assets:symbols/shopping/florist.svg" />
+                </m>-->
+                <!--<m v="hairdresser">
+                    <symbol src="assets:symbols/shopping/hairdresser.svg" />
+                </m>-->
+                <m v="supermarket|organic">
+                    <symbol src="assets:symbols/shopping/supermarket.svg" />
+                </m>
+
+                <m v="shop">
+                    <symbol src="assets:symbols/dot_magenta.svg" />
+                </m>
+
+                <m select="when-matched">
+                    <text use="shop" />
+                </m>
+            </m>
+
+            <!-- Tourism -->
+            <m select="first" zoom-min="17">
+                <m v="alpine_hut">
+                    <symbol src="assets:symbols/accommodation/alpinehut.svg" />
+                </m>
+                <m v="camp_site">
+                    <symbol src="assets:symbols/accommodation/camping.svg" />
+                </m>
+                <m v="hostel">
+                    <symbol src="assets:symbols/accommodation/hostel.svg" />
+                </m>
+                <m v="hotel">
+                    <symbol src="assets:symbols/accommodation/hotel2.svg" />
+                </m>
+
+                <m select="when-matched">
+                    <text use="accommodation" />
+                </m>
+            </m>
+
+            <!--Entertainment-->
+            <m select="first" zoom-min="16">
+                <m v="attraction">
+                    <symbol src="assets:symbols/custom/tourist/attraction.svg" />
+                </m>
+                <m v="museum">
+                    <symbol src="assets:symbols/custom/tourist/museum.svg" />
+                </m>
+                <m v="viewpoint">
+                    <symbol src="assets:symbols/custom/tourist/view_point.svg" />
+                </m>
+
+                <m select="when-matched" zoom-min="17">
+                    <text use="entertainment" />
+                </m>
+            </m>
+        </m>
+    </m>
+</rendertheme>

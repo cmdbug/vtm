@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    implementation project(':vtm-android')
+    implementation project(':vtm-extras')
+    implementation project(':vtm-themes')
+    // https://github.com/square/okhttp/issues/4481
+    implementation 'com.squareup.okhttp3:okhttp:3.12.5'
+    implementation "org.slf4j:slf4j-android:$slf4jVersion"
+}
+
+android {
+    compileSdkVersion androidCompileSdk()
+    buildToolsVersion "$androidBuildVersionTools"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    defaultConfig {
+        versionCode project.versionCode()
+        versionName project.versionName()
+        minSdkVersion androidMinSdk()
+        targetSdkVersion androidTargetSdk()
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            file("${rootDir}/vtm-android/natives").eachDir() { dir ->
+                jniLibs.srcDirs += "${dir.path}/lib"
+            }
+        }
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    lintOptions { abortOnError false }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}

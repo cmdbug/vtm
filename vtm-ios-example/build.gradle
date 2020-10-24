@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.7'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'robovm'
+
+sourceSets.main.java.srcDirs = ["src/"]
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+ext {
+    roboVMVersion = "2.3.7"
+}
+
+launchIPhoneSimulator.dependsOn build
+launchIPadSimulator.dependsOn build
+launchIOSDevice.dependsOn build
+createIPA.dependsOn build
+
+dependencies {
+    implementation project(':vtm-ios')
+    implementation project(':vtm-jts')
+    implementation "org.slf4j:slf4j-simple:$slf4jVersion"
+}
+
+task copyVtmResources(type: Copy) {
+    from("../vtm/resources")
+    into("${buildDir}")
+}
+
+task copyVtmThemesResources(type: Copy) {
+    from("../vtm-themes/resources")
+    into("${buildDir}")
+}
+
+task copyVtmPlaygroundResources(type: Copy) {
+    from("../vtm-playground/resources")
+    into("${buildDir}/assets/")
+}
+
+task copyIosNatives(type: Copy) {
+    from("../vtm-ios/natives")
+    into("${buildDir}/natives/")
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn copyVtmResources
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn copyVtmThemesResources
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn copyVtmPlaygroundResources
+}
+
+tasks.withType(JavaCompile) {
+    compileTask -> compileTask.dependsOn copyIosNatives
+}

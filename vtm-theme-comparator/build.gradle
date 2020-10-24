@@ -1,0 +1,38 @@
+apply plugin: 'application'
+
+dependencies {
+    implementation project(':vtm-desktop-lwjgl')
+    file("${rootDir}/vtm-desktop/natives").eachDir() { dir ->
+        implementation files(dir.path)
+    }
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    implementation 'com.fifesoft:rsyntaxtextarea:2.6.1'
+    implementation 'com.jtattoo:JTattoo:1.6.11'
+
+    implementation 'org.mapsforge:mapsforge-core:0.13.0'
+    implementation 'org.mapsforge:mapsforge-map:0.13.0'
+    implementation 'org.mapsforge:mapsforge-map-awt:0.13.0'
+    implementation 'org.mapsforge:mapsforge-map-reader:0.13.0'
+    implementation 'org.mapsforge:mapsforge-themes:0.13.0'
+    implementation 'net.sf.kxml:kxml2:2.3.0'
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src']
+        resources.srcDirs = ['resources']
+    }
+}
+
+mainClassName = "org.oscim.theme.comparator.Main"
+
+task fatJar(type: Jar, dependsOn: classes) {
+    classifier = 'jar-with-dependencies'
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    manifest {
+        attributes 'Main-Class': "${mainClassName}"
+    }
+    with jar
+}
