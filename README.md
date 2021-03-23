@@ -73,42 +73,42 @@ This library contains code from several projects:
 ## Screenshots
 
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_163543.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_163641.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_164002.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_163543.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_163641.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_164002.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_164326.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_153348.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_153603.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_164326.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_153348.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_153603.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_154325.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_154352.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_154521.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_154325.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_154352.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_154521.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_155046.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_155233.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_155830.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_155046.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_155233.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_155830.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_160212.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_091237.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112212.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_160212.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_091237.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112212.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112234.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112329.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112337.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112234.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112329.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112337.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112345.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112354.png"/>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112401.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112345.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112354.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112401.png"/>
 </div>
 <div>
-<img width="270" height="480" src="https://github.com/cmdbug/vtm/blob/master/docs/screenshots/Screenshot_112534.png"/>
+<img width="270" height="480" src="./docs/screenshots/Screenshot_112534.png"/>
 </div>
 
 | Android       | iOS           |
